@@ -17,5 +17,8 @@ public class TestController {
         System.out.println(test2);
         String test3 = testService.test("测试3号", 30);
         System.out.println(test3);
+        User user = new User("小明",15);
+        String age = testService.testUser(user);
+        System.out.println(age);
     }
 }
