@@ -2,13 +2,16 @@ package com.springboot.cxy.redis.domain;
 
 import com.alibaba.fastjson.JSON;
 import com.springboot.cxy.redis.annotation.RedisCache;
+import com.springboot.cxy.redis.util.SpelUtil;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.env.Environment;
 import org.springframework.util.StringUtils;
 
 import java.io.Serializable;
+import java.lang.reflect.Method;
 
 @Slf4j
 @Data
@@ -30,11 +33,11 @@ public class RedisCacheEntity implements Serializable{
     }
 
     public void initProperties() {
-        this.initKey();
-        this.initExpireTime();
+        this.generateKey();
+        this.generateExpireTime();
     }
 
-    public void initKey() {
+    public void generateKey() {
         //key目录
         String cacheDir = redisCache.cacheDir();
         if (StringUtils.isEmpty(cacheDir)) {
@@ -47,12 +50,13 @@ public class RedisCacheEntity implements Serializable{
         if (StringUtils.isEmpty(cacheKey)) {
             cacheKey = JSON.toJSONString(pjp.getArgs());//方法参数
         } else if (cacheKey.startsWith("#")) {
-            //TODO SPEL解析
+            //SPEL解析 AOP
+            cacheKey = SpelUtil.parse(pjp, cacheKey);
         }
         this.key = cacheDir + ":" + cacheKey;
     }
 
-    public void initExpireTime() {
+    public void generateExpireTime() {
         String expire = redisCache.expire();
         String timeRegex = "^\\d+$";//正则表达式（校验是否是数字）
         if (!StringUtils.isEmpty(expire)) {
