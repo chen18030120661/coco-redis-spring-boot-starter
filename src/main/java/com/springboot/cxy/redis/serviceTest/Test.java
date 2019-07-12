@@ -1,7 +1,6 @@
 package com.springboot.cxy.redis.serviceTest;
 
 public class Test {
-
     public static void main(String[] args) {
 //        DingTalkClient client = new DefaultDingTalkClient("https://oapi.dingtalk.com/robot/send?access_token=0f72dc161a83f32b5bed68c4313713bb934b5244c43533284dd2b42571f69a43");
 //        OapiRobotSendRequest request = new OapiRobotSendRequest();
@@ -41,5 +40,4 @@ public class Test {
         boolean matches = "125a22".matches(timeRegex);
         System.out.println(matches);
     }
-
 }
