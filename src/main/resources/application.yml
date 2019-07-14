@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://112.74.179.254:3306/weather?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
-    username: weather
-    password: 3H1HdBqrjtZ1GLCg
+    url: jdbc:mysql://127.0.0.1:3306/hhcrdb?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    username: root
+    password: root
     initialSize: 10
     maxIdle: 20
     minIdle: 5
@@ -21,12 +21,12 @@ spring:
     testOnReturn: false
     driverClassName: com.mysql.cj.jdbc.Driver
   redis:
-    host: 112.74.179.254
+    host: 127.0.0.1
     port: 6379
-    password: e8cFnj3CoWZdUFyXg8Dkv9Vp66c=
+    password: jnns
     database: 0
     timeout: 30000
 logging:
   level:
-    com.springboot.cachedemo: debug
+    com.springboot.cxy.redis: debug
 
