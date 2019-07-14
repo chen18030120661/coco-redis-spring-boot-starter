@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.serviceTest;
+package com.springboot.cxy.redis.test.redis;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

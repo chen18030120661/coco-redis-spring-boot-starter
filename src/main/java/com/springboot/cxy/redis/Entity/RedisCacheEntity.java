@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.domain;
+package com.springboot.cxy.redis.Entity;
 
 import com.alibaba.fastjson.JSON;
 import com.springboot.cxy.redis.annotation.RedisCache;
@@ -6,12 +6,12 @@ import com.springboot.cxy.redis.util.SpelUtil;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.io.Serializable;
-import java.lang.reflect.Method;
+import java.lang.annotation.Annotation;
 
 @Slf4j
 @Data
@@ -32,11 +32,17 @@ public class RedisCacheEntity implements Serializable{
         this.initProperties();
     }
 
+    /**
+     * 初始化参数
+     */
     public void initProperties() {
         this.generateKey();
         this.generateExpireTime();
     }
 
+    /**
+     * 获取缓存key
+     */
     public void generateKey() {
         //key目录
         String cacheDir = redisCache.cacheDir();
@@ -56,6 +62,9 @@ public class RedisCacheEntity implements Serializable{
         this.key = cacheDir + ":" + cacheKey;
     }
 
+    /**
+     * 获取过期时间
+     */
     public void generateExpireTime() {
         String expire = redisCache.expire();
         String timeRegex = "^\\d+$";//正则表达式（校验是否是数字）
@@ -72,7 +81,15 @@ public class RedisCacheEntity implements Serializable{
         }
     }
 
-    // MethodSignature signature = (MethodSignature) pjp.getSignature();
-    //        Method method = signature.getMethod();
-    //        RedisCache redisCache = method.getAnnotation(RedisCache.class);
+    /**
+     * 获取类上的注解(暂时未用到)
+     */
+    private void generateClassAnnotation() {
+        final Class declaringType = pjp.getSignature().getDeclaringType();
+        final Annotation annotation = declaringType.getAnnotation(Service.class);
+        if (annotation == null) {
+            return;
+        }
+        final Service service = (Service) annotation;
+    }
 }

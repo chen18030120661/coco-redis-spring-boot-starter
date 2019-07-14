@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.serviceTest;
+package com.springboot.cxy.redis.test.redis;
 
 import com.springboot.cxy.redis.annotation.RedisCache;
 import org.springframework.stereotype.Service;

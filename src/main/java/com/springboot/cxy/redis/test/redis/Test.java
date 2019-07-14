@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.serviceTest;
+package com.springboot.cxy.redis.test.redis;
 
 public class Test {
     public static void main(String[] args) {

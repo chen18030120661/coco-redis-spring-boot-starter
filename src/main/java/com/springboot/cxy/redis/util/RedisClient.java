@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.TimeUnit;
 
 /**
- * redis封装类
+ * redis封装类(opsForValue())
  *
  * @author xy.chen
  * @date 2019/7/11
@@ -20,6 +20,7 @@ public class RedisClient {
     private static  RedisTemplate redisTemplate = new RedisTemplate();
 
     public RedisClient() {
+        //不使用默认的序列化  采用stringSerializer 避免产生多的/0x等字符
         RedisSerializer stringSerializer = new StringRedisSerializer();
         redisTemplate.setKeySerializer(stringSerializer);
         redisTemplate.setValueSerializer(stringSerializer);
@@ -102,10 +103,10 @@ public class RedisClient {
     /**
      * 删除key
      *
-     * @auth zhicong.lin
      * @date 2019/4/11
      */
     public void delete(String key) {
         this.redisTemplate.delete(key);
     }
+
 }
