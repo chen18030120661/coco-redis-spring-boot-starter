@@ -7,5 +7,5 @@ public interface CallBack {
     * 那么传入B的方法就不可能只传A类，所以要定义一个接口，
     * 传入B的处理方法的参数就是这个接口对象
     * */
-    public void solve(String result);
+    void solve(String result);
 }
