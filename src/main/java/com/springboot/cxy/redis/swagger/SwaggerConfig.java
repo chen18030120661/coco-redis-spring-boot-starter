@@ -23,13 +23,13 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.weidai.zm.zyq.action"))
+                .apis(RequestHandlerSelectors.basePackage("com.springboot.cxy.redis"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo(){
-        return new ApiInfoBuilder().title("Spring Boot中使用Swagger构建Rest Api")
+        return new ApiInfoBuilder().title("测试接口Api")
                 .version("1.0").build();
     }
 }
