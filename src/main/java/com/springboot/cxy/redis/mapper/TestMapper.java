@@ -1,9 +1,8 @@
 package com.springboot.cxy.redis.mapper;
 
-import com.springboot.cxy.redis.mq.MsgQueueEntity;
+import com.springboot.cxy.redis.msgqueue.MsgQueueEntity;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author : xy.chen

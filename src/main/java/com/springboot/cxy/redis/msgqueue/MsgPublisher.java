@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.mq;
+package com.springboot.cxy.redis.msgqueue;
 
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;

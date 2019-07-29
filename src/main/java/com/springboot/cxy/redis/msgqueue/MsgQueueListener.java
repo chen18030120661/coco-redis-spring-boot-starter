@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.mq;
+package com.springboot.cxy.redis.msgqueue;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.context.event.EventListener;
@@ -7,7 +7,6 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import java.util.Map;
 
 /**
  * @author : xy.chen

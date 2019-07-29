@@ -1,10 +1,8 @@
-package com.springboot.cxy.redis.mq;
+package com.springboot.cxy.redis.msgqueue;
 
 import com.alibaba.fastjson.JSON;
-import com.springboot.cxy.redis.mapper.TestMapper;
 import com.springboot.cxy.redis.test.redis.TestService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -12,7 +10,6 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author : xy.chen

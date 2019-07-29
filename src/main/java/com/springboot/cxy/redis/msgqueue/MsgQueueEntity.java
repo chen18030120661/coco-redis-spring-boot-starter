@@ -1,11 +1,10 @@
-package com.springboot.cxy.redis.mq;
+package com.springboot.cxy.redis.msgqueue;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * @author : xy.chen
