@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.annotation;
+package com.springboot.cxy.redis.module.annotation;
 
 import java.lang.annotation.*;
 import java.util.concurrent.TimeUnit;

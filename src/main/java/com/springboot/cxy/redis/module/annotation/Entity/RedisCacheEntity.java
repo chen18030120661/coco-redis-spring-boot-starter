@@ -1,8 +1,8 @@
-package com.springboot.cxy.redis.annotation.Entity;
+package com.springboot.cxy.redis.module.annotation.Entity;
 
 import com.alibaba.fastjson.JSON;
-import com.springboot.cxy.redis.annotation.RedisCache;
-import com.springboot.cxy.redis.annotation.util.SpelUtil;
+import com.springboot.cxy.redis.module.annotation.RedisCache;
+import com.springboot.cxy.redis.module.annotation.util.SpelUtil;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;

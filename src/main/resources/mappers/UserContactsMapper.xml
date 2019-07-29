@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.cxy.redis.mapper.UserContactsMapper">
+
+    <!--返回Map-->
+    <resultMap id="BaseResultMap" type="com.springboot.cxy.redis.module.shardtable.UserContactsEntity">
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="user_id" property="userId" jdbcType="BIGINT" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="total_count" property="totalCount" jdbcType="INTEGER" />
+        <result column="sum_duration" property="sumDuration" jdbcType="INTEGER" />
+    </resultMap>
+
+    <!-- 查询数据库是否存在此表 -->
+    <select id="countTable" resultType="java.lang.Integer" parameterType="java.lang.String">
+        SELECT COUNT(1) FROM information_schema.TABLES WHERE table_name = #{tableName,jdbcType=VARCHAR} and TABLE_SCHEMA = database()
+    </select>
+
+    <!-- 创建分表 -->
+    <select id="createTable">
+        CREATE TABLE ${tableName} (
+        `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+        `user_id` bigint(20) DEFAULT NULL COMMENT '用户标识',
+        `name` varchar(20) DEFAULT '' COMMENT '姓名',
+        `phone` varchar(20) DEFAULT '' COMMENT '手机号码',
+        `total_count` int(11) DEFAULT '0' COMMENT '通话次数',
+        `sum_duration` int(11) DEFAULT '0' COMMENT '通话总时长',
+        PRIMARY KEY (`id`),
+        UNIQUE INDEX (`user_id`,`phone`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户通讯录表';
+    </select>
+
+    <!-- 根据参数(分表)查询 -->
+    <select id="listShardSelective" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from ${tableName}
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="params.userId != null">
+                user_id = #{params.userId,jdbcType=BIGINT}
+            </if>
+            <if test="params.name !=null and params.name !='' ">
+                and name like concat("%",#{params.name, jdbcType=VARCHAR},"%")
+            </if>
+            <if test="params.phone !=null and params.phone !='' ">
+                and phone like concat("%",#{params.phone, jdbcType=VARCHAR},"%")
+            </if>
+        </trim>
+        group by phone order by sum_duration desc
+    </select>
+
+    <!-- 保存信息 -->
+    <insert id="saveShard">
+        insert into ${tableName}(name,phone,user_id)values(
+        #{item.name,jdbcType=VARCHAR},
+        #{item.phone,jdbcType=VARCHAR},
+        #{item.userId,jdbcType=INTEGER}
+        )
+    </insert>
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into cl_user_count (user_id, contacts_black_count) values (#{userId}, #{contactsBlackCount})
+    </insert>
+
+    <update id="update">
+        update cl_user_count set contacts_black_count = #{contactsBlackCount} where id = #{id}
+    </update>
+
+    <select id="countContactsBlack" resultType="java.lang.Integer">
+        select count(1) from (select distinct black_info from cl_user_black_info where black_info in (select distinct phone from ${tableName} where user_id = #{userId})) temp
+    </select>
+
+    <select id="findByUserId" resultType="com.rongdu.cashloan.cl.domain.UserCount">
+        select * from cl_user_count where user_id = #{userId} order by id desc limit 1
+    </select>
+
+</mapper>

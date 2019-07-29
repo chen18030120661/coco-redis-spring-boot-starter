@@ -1,7 +1,7 @@
 package com.springboot.cxy.redis.test.redis;
 
-import com.springboot.cxy.redis.msgqueue.MsgPublisher;
-import com.springboot.cxy.redis.msgqueue.MsgQueueEntity;
+import com.springboot.cxy.redis.module.msgqueue.MsgPublisher;
+import com.springboot.cxy.redis.module.msgqueue.MsgQueueEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.shardtable.util;
+package com.springboot.cxy.redis.module.shardtable.util;
 
 import java.util.ArrayList;
 import java.util.List;

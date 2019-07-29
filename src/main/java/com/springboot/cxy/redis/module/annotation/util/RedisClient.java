@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.annotation.util;
+package com.springboot.cxy.redis.module.annotation.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

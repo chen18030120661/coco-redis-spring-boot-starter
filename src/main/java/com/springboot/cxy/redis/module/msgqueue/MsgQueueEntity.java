@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.msgqueue;
+package com.springboot.cxy.redis.module.msgqueue;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

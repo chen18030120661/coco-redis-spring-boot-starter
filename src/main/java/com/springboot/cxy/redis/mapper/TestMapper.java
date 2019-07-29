@@ -1,6 +1,6 @@
-package com.springboot.cxy.redis.test.mapper;
+package com.springboot.cxy.redis.mapper;
 
-import com.springboot.cxy.redis.msgqueue.MsgQueueEntity;
+import com.springboot.cxy.redis.module.msgqueue.MsgQueueEntity;
 
 import java.util.List;
 
@@ -17,4 +17,5 @@ public interface TestMapper {
      * @return
      */
     int insertTestBath(List<MsgQueueEntity> list);
+
 }

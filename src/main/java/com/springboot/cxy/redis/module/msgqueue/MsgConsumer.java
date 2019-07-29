@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.msgqueue;
+package com.springboot.cxy.redis.module.msgqueue;
 
 import com.alibaba.fastjson.JSON;
 import com.springboot.cxy.redis.test.redis.TestService;

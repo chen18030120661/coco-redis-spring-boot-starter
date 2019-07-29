@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- cl_user_count表:渠道信息模块 -->
+<mapper namespace="com.rongdu.cashloan.cl.mapper.UserCountMapper">
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into cl_user_count (user_id, contacts_black_count) values (#{userId}, #{contactsBlackCount})
+    </insert>
+
+    <update id="update">
+        update cl_user_count set contacts_black_count = #{contactsBlackCount} where id = #{id}
+    </update>
+
+    <select id="countContactsBlack" resultType="java.lang.Integer">
+        select count(1) from (select distinct black_info from cl_user_black_info where black_info in (select distinct phone from ${tableName} where user_id = #{userId})) temp
+    </select>
+
+    <select id="findByUserId" resultType="com.rongdu.cashloan.cl.domain.UserCount">
+        select * from cl_user_count where user_id = #{userId} order by id desc limit 1
+    </select>
+</mapper>

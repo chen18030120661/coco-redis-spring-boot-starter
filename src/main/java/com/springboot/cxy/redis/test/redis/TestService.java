@@ -1,13 +1,15 @@
 package com.springboot.cxy.redis.test.redis;
 
-import com.springboot.cxy.redis.annotation.RedisCache;
-import com.springboot.cxy.redis.test.mapper.TestMapper;
-import com.springboot.cxy.redis.msgqueue.MsgQueueEntity;
+import com.springboot.cxy.redis.module.annotation.RedisCache;
+import com.springboot.cxy.redis.module.msgqueue.MsgQueueEntity;
+import com.springboot.cxy.redis.mapper.TestMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Slf4j
 @Service
 public class TestService {
 
@@ -27,4 +29,5 @@ public class TestService {
     public int insertTestBath(List<MsgQueueEntity> list){
         return testMapper.insertTestBath(list);
     }
+
 }
