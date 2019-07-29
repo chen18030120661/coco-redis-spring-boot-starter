@@ -1,7 +1,7 @@
 package com.springboot.cxy.redis.test.redis;
 
 import com.springboot.cxy.redis.annotation.RedisCache;
-import com.springboot.cxy.redis.mapper.TestMapper;
+import com.springboot.cxy.redis.test.mapper.TestMapper;
 import com.springboot.cxy.redis.msgqueue.MsgQueueEntity;
 import org.springframework.stereotype.Service;
 
