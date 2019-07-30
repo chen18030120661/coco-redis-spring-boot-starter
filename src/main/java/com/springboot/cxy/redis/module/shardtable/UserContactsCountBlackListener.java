@@ -1,6 +1,7 @@
 package com.springboot.cxy.redis.module.shardtable;
 
-import com.springboot.cxy.redis.mapper.UserCountMapper;
+import com.springboot.cxy.redis.module.shardtable.mapper.UserCountMapper;
+import com.springboot.cxy.redis.module.shardtable.entity.UserCountEntity;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;

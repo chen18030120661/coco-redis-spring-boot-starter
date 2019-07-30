@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.module.annotation.Entity;
+package com.springboot.cxy.redis.module.annotation.entity;
 
 import com.alibaba.fastjson.JSON;
 import com.springboot.cxy.redis.module.annotation.RedisCache;

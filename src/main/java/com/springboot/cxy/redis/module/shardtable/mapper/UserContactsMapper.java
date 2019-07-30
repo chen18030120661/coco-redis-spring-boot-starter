@@ -1,6 +1,6 @@
-package com.springboot.cxy.redis.mapper;
+package com.springboot.cxy.redis.module.shardtable.mapper;
 
-import com.springboot.cxy.redis.module.shardtable.UserContactsEntity;
+import com.springboot.cxy.redis.module.shardtable.entity.UserContactsEntity;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

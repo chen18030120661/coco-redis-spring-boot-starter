@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.module.shardtable;
+package com.springboot.cxy.redis.module.shardtable.entity;
 
 import lombok.Data;
 

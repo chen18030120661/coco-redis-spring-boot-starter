@@ -1,6 +1,8 @@
-package com.springboot.cxy.redis.module.shardtable;
+package com.springboot.cxy.redis.module.shardtable.service;
 
-import com.springboot.cxy.redis.mapper.UserContactsMapper;
+import com.springboot.cxy.redis.module.shardtable.mapper.UserContactsMapper;
+import com.springboot.cxy.redis.module.shardtable.UserContactsCountEvent;
+import com.springboot.cxy.redis.module.shardtable.entity.UserContactsEntity;
 import com.springboot.cxy.redis.module.shardtable.util.ShardTableUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;

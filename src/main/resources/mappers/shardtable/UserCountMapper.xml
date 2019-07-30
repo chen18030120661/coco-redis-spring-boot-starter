@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- cl_user_count表:渠道信息模块 -->
-<mapper namespace="com.springboot.cxy.redis.mapper.UserCountMapper">
+<mapper namespace="com.springboot.cxy.redis.module.shardtable.mapper.UserCountMapper">
 
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
         insert into cl_user_count (user_id, contacts_black_count) values (#{userId}, #{contactsBlackCount})
@@ -15,7 +15,7 @@
         select count(1) from (select distinct black_info from cl_user_black_info where black_info in (select distinct phone from ${tableName} where user_id = #{userId})) temp
     </select>
 
-    <select id="findByUserId" resultType="com.springboot.cxy.redis.module.shardtable.UserCountEntity">
+    <select id="findByUserId" resultType="com.springboot.cxy.redis.module.shardtable.entity.UserCountEntity">
         select * from cl_user_count where user_id = #{userId} order by id desc limit 1
     </select>
 </mapper>

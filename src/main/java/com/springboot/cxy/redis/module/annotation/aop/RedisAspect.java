@@ -1,7 +1,7 @@
 package com.springboot.cxy.redis.module.annotation.aop;
 
 import com.springboot.cxy.redis.module.annotation.RedisCache;
-import com.springboot.cxy.redis.module.annotation.Entity.RedisCacheEntity;
+import com.springboot.cxy.redis.module.annotation.entity.RedisCacheEntity;
 import com.springboot.cxy.redis.module.annotation.util.RedisClient;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;

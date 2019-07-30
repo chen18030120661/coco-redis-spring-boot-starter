@@ -1,6 +1,6 @@
-package com.springboot.cxy.redis.mapper;
+package com.springboot.cxy.redis.test.redis.mapper;
 
-import com.springboot.cxy.redis.module.msgqueue.MsgQueueEntity;
+import com.springboot.cxy.redis.module.msgqueue.entity.MsgQueueEntity;
 
 import java.util.List;
 

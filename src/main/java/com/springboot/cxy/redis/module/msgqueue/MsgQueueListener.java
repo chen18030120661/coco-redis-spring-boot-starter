@@ -1,6 +1,7 @@
 package com.springboot.cxy.redis.module.msgqueue;
 
 import com.alibaba.fastjson.JSON;
+import com.springboot.cxy.redis.module.msgqueue.entity.MsgQueueEntity;
 import org.springframework.context.event.EventListener;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.scheduling.annotation.Async;

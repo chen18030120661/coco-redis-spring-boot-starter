@@ -1,6 +1,6 @@
-package com.springboot.cxy.redis.mapper;
+package com.springboot.cxy.redis.module.shardtable.mapper;
 
-import com.springboot.cxy.redis.module.shardtable.UserCountEntity;
+import com.springboot.cxy.redis.module.shardtable.entity.UserCountEntity;
 import org.apache.ibatis.annotations.Param;
 
 /**
