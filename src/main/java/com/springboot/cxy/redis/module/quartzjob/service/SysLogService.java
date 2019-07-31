@@ -18,4 +18,6 @@ public interface SysLogService{
 	 * @return
 	 */
 	Page<SysLogEntity> sysLogList(Map<String, Object> params, int current, int pageSize);
+
+	int insert(SysLogEntity log);
 }

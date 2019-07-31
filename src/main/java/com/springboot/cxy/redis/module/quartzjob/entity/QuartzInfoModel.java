@@ -1,7 +1,7 @@
 package com.springboot.cxy.redis.module.quartzjob.entity;
 
 
-import com.springboot.cxy.redis.module.quartzjob.constant.ChannelModel;
+import com.springboot.cxy.redis.module.quartzjob.constant.QuartzStateModel;
 
 /**
  *
@@ -26,7 +26,7 @@ public class QuartzInfoModel extends QuartzInfoEntity{
      */
     public static String stateConvert(String state) {
         String stateStr;
-        if (ChannelModel.STATE_DISABLE.equals(state)) {
+        if (QuartzStateModel.STATE_DISABLE.equals(state)) {
             stateStr = "禁用";
         } else {
             stateStr = "启用";

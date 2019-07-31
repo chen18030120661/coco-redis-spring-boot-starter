@@ -32,4 +32,9 @@ public class SysLogServiceImpl implements SysLogService {
 		PageHelper.startPage(current, pageSize);
 		return (Page<SysLogEntity>)sysLogMapper.findPage(params);
 	}
+
+	@Override
+	public int insert(SysLogEntity log) {
+		return sysLogMapper.save(log);
+	}
 }

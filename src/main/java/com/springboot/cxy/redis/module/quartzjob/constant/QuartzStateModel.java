@@ -1,6 +1,6 @@
 package com.springboot.cxy.redis.module.quartzjob.constant;
 
-public class ChannelModel {
+public class QuartzStateModel {
 
     /*********   状态 - 定义   *********   /
      /** 状态 - 启用 */

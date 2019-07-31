@@ -15,4 +15,5 @@ public interface SysLogMapper{
 
 	List<SysLogEntity> findPage(Map<String, Object> params);
 
+	int save(SysLogEntity log);
 }

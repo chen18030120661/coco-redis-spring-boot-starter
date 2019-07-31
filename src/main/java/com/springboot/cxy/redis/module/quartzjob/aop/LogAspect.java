@@ -2,6 +2,7 @@ package com.springboot.cxy.redis.module.quartzjob.aop;
 
 import com.springboot.cxy.redis.module.quartzjob.annotation.AddSysLog;
 import com.springboot.cxy.redis.module.quartzjob.entity.SysLogEntity;
+import com.springboot.cxy.redis.module.quartzjob.service.SysLogService;
 import com.springboot.cxy.redis.module.quartzjob.util.IpUtil;
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
@@ -27,8 +28,8 @@ public class LogAspect {
 	
 	private static final Logger logger = Logger.getLogger(LogAspect.class);
 	
-//	@Resource
-//	private SysLogService sysLogService;
+	@Resource
+	private SysLogService sysLogService;
 	
 	
 	 /**
@@ -54,7 +55,7 @@ public class LogAspect {
 			log.setMethod(methodName);
 			log.setRemoteAddr(ip);
 			log.setRequestUri(uri);
-//			sysLogService.insert(log);
+			sysLogService.insert(log);
 		} catch (Exception e) {
 			logger.error("保存系统日志出现异常", e);
 		}
