@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSON;
 import com.springboot.cxy.redis.module.quartzjob.QuartzManager;
+import com.springboot.cxy.redis.module.quartzjob.annotation.AddSysLog;
 import com.springboot.cxy.redis.module.quartzjob.entity.QuartzInfoEntity;
 import com.springboot.cxy.redis.module.quartzjob.entity.QuartzInfoModel;
 import com.springboot.cxy.redis.module.quartzjob.service.QuartzInfoService;
@@ -133,7 +134,9 @@ public class QuartzInfoController{
 		boolean flag = true;
 		Job cl = null;
 		
-		QuartzInfo quartzInfo = quartzInfoService.getById(id);
+//		QuartzInfoEntity quartzInfo = quartzInfoService.getById(id);
+		//TODO 查询定时任务
+		QuartzInfoEntity quartzInfo = new QuartzInfoEntity();
 		if(null == quartzInfo || StringUtil.isBlank(quartzInfo.getClassName())){
 			flag = false;
 		}
@@ -164,15 +167,15 @@ public class QuartzInfoController{
       
         
         Map<String,Object> result = new HashMap<String,Object>();
-        if (flag) {
-        	result.put(Constant.RESPONSE_CODE, Constant.SUCCEED_CODE_VALUE);
-			result.put(Constant.RESPONSE_CODE_MSG, "操作成功");
-		}else {
-			result.put(Constant.RESPONSE_CODE, Constant.FAIL_CODE_VALUE);
-			result.put(Constant.RESPONSE_CODE_MSG, "操作失败");
-		}
-        logger.info("【启动任务】结束...");
-        ServletUtils.writeToResponse(response,result);
+//        if (flag) {
+//        	result.put(Constant.RESPONSE_CODE, Constant.SUCCEED_CODE_VALUE);
+//			result.put(Constant.RESPONSE_CODE_MSG, "操作成功");
+//		}else {
+//			result.put(Constant.RESPONSE_CODE, Constant.FAIL_CODE_VALUE);
+//			result.put(Constant.RESPONSE_CODE_MSG, "操作失败");
+//		}
+//        logger.info("【启动任务】结束...");
+//        ServletUtils.writeToResponse(response,result);
 	}
 
 	/**
@@ -189,7 +192,9 @@ public class QuartzInfoController{
 			@RequestParam(value="id") Long id) throws Exception {
         logger.info("【删除任务】开始...");
         
-        QuartzInfo quartzInfo = quartzInfoService.getById(id);
+//        QuartzInfo quartzInfo = quartzInfoService.getById(id);
+		//TODO 查询定时任务
+		QuartzInfoEntity quartzInfo = new QuartzInfoEntity();
         if(null != quartzInfo && QuartzInfoModel.STATE_ENABLE.equals(quartzInfo.getState())){
 //        	QuartzManager.removeJob(quartzInfo.getCode());
         	QuartzManager quartzManager = new QuartzManager();
@@ -201,16 +206,16 @@ public class QuartzInfoController{
         data.put("state", QuartzInfoModel.STATE_DISABLE);
         boolean flag = quartzInfoService.update(data);
         
-        Map<String,Object> result = new HashMap<String,Object>();
-        if (flag) {
-        	result.put(Constant.RESPONSE_CODE, Constant.SUCCEED_CODE_VALUE);
-			result.put(Constant.RESPONSE_CODE_MSG, "操作成功");
-		}else {
-			result.put(Constant.RESPONSE_CODE, Constant.FAIL_CODE_VALUE);
-			result.put(Constant.RESPONSE_CODE_MSG, "操作失败");
-		}
-        logger.info("【删除任务】结束...");
-        ServletUtils.writeToResponse(response,result);
+//        Map<String,Object> result = new HashMap<String,Object>();
+//        if (flag) {
+//        	result.put(Constant.RESPONSE_CODE, Constant.SUCCEED_CODE_VALUE);
+//			result.put(Constant.RESPONSE_CODE_MSG, "操作成功");
+//		}else {
+//			result.put(Constant.RESPONSE_CODE, Constant.FAIL_CODE_VALUE);
+//			result.put(Constant.RESPONSE_CODE_MSG, "操作失败");
+//		}
+//        logger.info("【删除任务】结束...");
+//        ServletUtils.writeToResponse(response,result);
 	}
 
 	/**
@@ -231,7 +236,9 @@ public class QuartzInfoController{
 			@RequestParam(value = "cycle") String cycle) throws Exception {
         logger.info("【修改任务】开始...");
        
-        QuartzInfo quartzInfo = quartzInfoService.getById(id);
+//        QuartzInfo quartzInfo = quartzInfoService.getById(id);
+		//TODO 查询定时任务
+		QuartzInfoEntity quartzInfo = new QuartzInfoEntity();
         if(null != quartzInfo && QuartzInfoModel.STATE_ENABLE.equals(quartzInfo.getState())){
 //        	QuartzManager.modifyJobTime(quartzInfo.getCode(), cycle);
         	QuartzManager quartzManager = new QuartzManager();
@@ -244,15 +251,15 @@ public class QuartzInfoController{
         data.put("cycle", cycle);
         boolean flag = quartzInfoService.update(data);
         Map<String,Object> result = new HashMap<String,Object>();
-        if (flag) {
-        	result.put(Constant.RESPONSE_CODE, Constant.SUCCEED_CODE_VALUE);
-			result.put(Constant.RESPONSE_CODE_MSG, Constant.OPERATION_SUCCESS);
-		}else {
-			result.put(Constant.RESPONSE_CODE, Constant.FAIL_CODE_VALUE);
-			result.put(Constant.RESPONSE_CODE_MSG, Constant.OPERATION_FAIL);
-		}
-        logger.info("【修改任务】结束...");
-        ServletUtils.writeToResponse(response,result);
+//        if (flag) {
+//        	result.put(Constant.RESPONSE_CODE, Constant.SUCCEED_CODE_VALUE);
+//			result.put(Constant.RESPONSE_CODE_MSG, Constant.OPERATION_SUCCESS);
+//		}else {
+//			result.put(Constant.RESPONSE_CODE, Constant.FAIL_CODE_VALUE);
+//			result.put(Constant.RESPONSE_CODE_MSG, Constant.OPERATION_FAIL);
+//		}
+//        logger.info("【修改任务】结束...");
+//        ServletUtils.writeToResponse(response,result);
 	}
 
 	/**
@@ -282,23 +289,24 @@ public class QuartzInfoController{
 			HttpServletRequest request, HttpServletResponse response,
 			@RequestParam(value = "id") Long id) throws Exception {
 		logger.info("【执行】开始...");
-		QuartzInfo quartzInfo = quartzInfoService.getById(id);
-
+//		QuartzInfo quartzInfo = quartzInfoService.getById(id);
+		//TODO 查询定时任务
+		QuartzInfoEntity quartzInfo = new QuartzInfoEntity();
 		if (null == quartzInfo || QuartzInfoModel.STATE_DISABLE.equals(quartzInfo.getState())) {
 			Map<String, Object> result = new HashMap<String, Object>();
-			result.put(Constant.RESPONSE_CODE, Constant.FAIL_CODE_VALUE);
-			result.put(Constant.RESPONSE_CODE_MSG, "任务不存在或已停止");
-			ServletUtils.writeToResponse(response, result);
+//			result.put(Constant.RESPONSE_CODE, Constant.FAIL_CODE_VALUE);
+//			result.put(Constant.RESPONSE_CODE_MSG, "任务不存在或已停止");
+//			ServletUtils.writeToResponse(response, result);
 			return;
 		}
 		QuartzManager quartzManager = new QuartzManager();
 		quartzManager.startJobNow(quartzInfo.getCode());
 		
 		Map<String, Object> result = new HashMap<String, Object>();
-		result.put(Constant.RESPONSE_CODE, Constant.SUCCEED_CODE_VALUE);
-		result.put(Constant.RESPONSE_CODE_MSG, "操作成功");
-		logger.info("【执行任务】" + quartzInfo.getCode() + "结束...");
-		ServletUtils.writeToResponse(response, result);
+//		result.put(Constant.RESPONSE_CODE, Constant.SUCCEED_CODE_VALUE);
+//		result.put(Constant.RESPONSE_CODE_MSG, "操作成功");
+//		logger.info("【执行任务】" + quartzInfo.getCode() + "结束...");
+//		ServletUtils.writeToResponse(response, result);
 	}
 
 }
