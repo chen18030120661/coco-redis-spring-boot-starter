@@ -4,20 +4,15 @@ import java.util.List;
 import java.util.Map;
 
 
+import com.github.pagehelper.Page;
 import com.springboot.cxy.redis.module.quartzjob.entity.QuartzInfoEntity;
 import com.springboot.cxy.redis.module.quartzjob.entity.QuartzInfoModel;
-import org.springframework.data.domain.Page;
 
 /**
- * 定时任务详情Service
- * 
- * @author lyang
- * @version 1.0.0
- * @date 2017-03-15 13:30:53
- * Copyright 杭州融都科技股份有限公司  arc All Rights Reserved
- * 官方网站：www.erongdu.com
- * 
- * 未经授权不得进行修改、复制、出售及商业使用
+ *
+ * @author : xy.chen
+ * @time : 2019/7/31
+ * @desc : 定时任务详情Service
  */
 public interface QuartzInfoService{
 

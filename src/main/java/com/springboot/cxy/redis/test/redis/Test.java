@@ -1,5 +1,7 @@
 package com.springboot.cxy.redis.test.redis;
 
+import com.alibaba.fastjson.JSON;
+
 public class Test {
     public static void main(String[] args) {
 //        DingTalkClient client = new DefaultDingTalkClient("https://oapi.dingtalk.com/robot/send?access_token=0f72dc161a83f32b5bed68c4313713bb934b5244c43533284dd2b42571f69a43");
@@ -35,9 +37,15 @@ public class Test {
 //            e.printStackTrace();
 //        }
 //        String timeRegex = "  ";
-        String timeRegex = "^\\d+$";
-        System.out.println(timeRegex);
-        boolean matches = "125a22".matches(timeRegex);
-        System.out.println(matches);
+//        String timeRegex = "^\\d+$";
+//        System.out.println(timeRegex);
+//        boolean matches = "125a22".matches(timeRegex);
+//        System.out.println(matches);
+    testAa("dasda","d2da","d2dsdaa");
+    }
+    public static void testAa(String... params){
+        for (String param : params) {
+            System.out.println(param);
+        }
     }
 }

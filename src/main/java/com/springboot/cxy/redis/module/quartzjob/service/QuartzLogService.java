@@ -1,21 +1,16 @@
 package com.springboot.cxy.redis.module.quartzjob.service;
 
+import com.github.pagehelper.Page;
 import com.springboot.cxy.redis.module.quartzjob.entity.QuartzLogEntity;
 import com.springboot.cxy.redis.module.quartzjob.entity.QuartzLogModel;
-import org.springframework.data.domain.Page;
 
 import java.util.Map;
 
 /**
- * 定时任务记录Service
- * 
- * @author lyang
- * @version 1.0.0
- * @date 2017-03-15 13:38:29
- * Copyright 杭州融都科技股份有限公司  arc All Rights Reserved
- * 官方网站：www.erongdu.com
- * 
- * 未经授权不得进行修改、复制、出售及商业使用
+ *
+ * @author : xy.chen
+ * @time : 2019/7/31
+ * @desc : 定时任务记录Service
  */
 public interface QuartzLogService{
 

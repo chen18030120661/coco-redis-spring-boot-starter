@@ -1,6 +1,7 @@
 package com.springboot.cxy.redis.module.quartzjob.mapper;
 
 
+import com.springboot.cxy.redis.module.quartzjob.entity.QuartzInfoEntity;
 import com.springboot.cxy.redis.module.quartzjob.entity.QuartzInfoModel;
 
 import java.util.List;
@@ -21,4 +22,6 @@ public interface QuartzInfoMapper {
      * @return
      */
     List<QuartzInfoModel> page(Map<String, Object> map);
+
+    QuartzInfoEntity findSelective(Map<String, Object> paramMap);
 }
