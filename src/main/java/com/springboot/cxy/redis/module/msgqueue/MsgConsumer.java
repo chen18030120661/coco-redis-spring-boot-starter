@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -31,17 +33,19 @@ public class MsgConsumer {
     public void saveMsg() {
         try {
             List<MsgQueueEntity> list = new ArrayList<>();
-            while (true){
+            while (true) {
                 MsgQueueEntity msgQueueEntity = JSON.parseObject(stringRedisTemplate.opsForList().rightPop("QUEUE_SCHEDULED_CXY"), MsgQueueEntity.class);
                 if (msgQueueEntity == null) {
                     break;
                 }
                 list.add(msgQueueEntity);
             }
-            testService.insertTestBath(list);
-        }catch (Exception e){
-          log.error("消息队列消费异常，【{}】", e.getMessage());
-        }finally {
+            if (list != null && list.size() > 0) {
+                testService.insertTestBath(list);
+            }
+        } catch (Exception e) {
+            log.error("消息队列消费异常，【{}】", e.getMessage());
+        } finally {
             try {
                 Thread.sleep(10L);
             } catch (InterruptedException e) {

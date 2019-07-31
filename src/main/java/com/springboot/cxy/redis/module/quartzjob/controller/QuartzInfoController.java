@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSON;
+import com.github.pagehelper.Page;
 import com.springboot.cxy.redis.module.quartzjob.QuartzManager;
 import com.springboot.cxy.redis.module.quartzjob.annotation.AddSysLog;
 import com.springboot.cxy.redis.module.quartzjob.entity.QuartzInfoEntity;
@@ -17,7 +18,6 @@ import com.springboot.cxy.redis.module.quartzjob.service.QuartzInfoService;
 import org.apache.log4j.Logger;
 import org.quartz.Job;
 import org.springframework.context.annotation.Scope;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -134,9 +134,7 @@ public class QuartzInfoController{
 		boolean flag = true;
 		Job cl = null;
 		
-//		QuartzInfoEntity quartzInfo = quartzInfoService.getById(id);
-		//TODO 查询定时任务
-		QuartzInfoEntity quartzInfo = new QuartzInfoEntity();
+		QuartzInfoEntity quartzInfo = quartzInfoService.getById(id);
 		if(null == quartzInfo || StringUtil.isBlank(quartzInfo.getClassName())){
 			flag = false;
 		}
@@ -191,10 +189,8 @@ public class QuartzInfoController{
 			HttpServletRequest request, HttpServletResponse response,
 			@RequestParam(value="id") Long id) throws Exception {
         logger.info("【删除任务】开始...");
-        
-//        QuartzInfo quartzInfo = quartzInfoService.getById(id);
-		//TODO 查询定时任务
-		QuartzInfoEntity quartzInfo = new QuartzInfoEntity();
+
+		QuartzInfoEntity quartzInfo = quartzInfoService.getById(id);
         if(null != quartzInfo && QuartzInfoModel.STATE_ENABLE.equals(quartzInfo.getState())){
 //        	QuartzManager.removeJob(quartzInfo.getCode());
         	QuartzManager quartzManager = new QuartzManager();
@@ -236,9 +232,7 @@ public class QuartzInfoController{
 			@RequestParam(value = "cycle") String cycle) throws Exception {
         logger.info("【修改任务】开始...");
        
-//        QuartzInfo quartzInfo = quartzInfoService.getById(id);
-		//TODO 查询定时任务
-		QuartzInfoEntity quartzInfo = new QuartzInfoEntity();
+        QuartzInfoEntity quartzInfo = quartzInfoService.getById(id);
         if(null != quartzInfo && QuartzInfoModel.STATE_ENABLE.equals(quartzInfo.getState())){
 //        	QuartzManager.modifyJobTime(quartzInfo.getCode(), cycle);
         	QuartzManager quartzManager = new QuartzManager();
@@ -289,9 +283,7 @@ public class QuartzInfoController{
 			HttpServletRequest request, HttpServletResponse response,
 			@RequestParam(value = "id") Long id) throws Exception {
 		logger.info("【执行】开始...");
-//		QuartzInfo quartzInfo = quartzInfoService.getById(id);
-		//TODO 查询定时任务
-		QuartzInfoEntity quartzInfo = new QuartzInfoEntity();
+		QuartzInfoEntity quartzInfo = quartzInfoService.getById(id);
 		if (null == quartzInfo || QuartzInfoModel.STATE_DISABLE.equals(quartzInfo.getState())) {
 			Map<String, Object> result = new HashMap<String, Object>();
 //			result.put(Constant.RESPONSE_CODE, Constant.FAIL_CODE_VALUE);

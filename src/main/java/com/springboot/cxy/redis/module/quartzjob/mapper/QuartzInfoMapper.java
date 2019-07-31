@@ -24,4 +24,12 @@ public interface QuartzInfoMapper {
     List<QuartzInfoModel> page(Map<String, Object> map);
 
     QuartzInfoEntity findSelective(Map<String, Object> paramMap);
+
+    int save(QuartzInfoEntity qi);
+
+    int updateSelective(Map<String, Object> search);
+
+    List<QuartzInfoEntity> listSelective(Map<String, Object> result);
+    
+    QuartzInfoEntity findByPrimary(Long id);
 }

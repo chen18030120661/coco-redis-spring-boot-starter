@@ -66,6 +66,7 @@ public interface QuartzInfoService{
 	 * @param searchMap
 	 * @return
 	 */
-	public List<QuartzInfoModel> quartzInfoList(Map<String, Object> searchMap);
-	
+	List<QuartzInfoModel> quartzInfoList(Map<String, Object> searchMap);
+
+	QuartzInfoEntity getById(Long id);
 }

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.springboot.cxy.redis.module.quartzjob.entity.QuartzLogEntity;
 import com.springboot.cxy.redis.module.quartzjob.entity.QuartzLogModel;
@@ -12,7 +13,6 @@ import com.springboot.cxy.redis.module.quartzjob.mapper.QuartzLogMapper;
 import com.springboot.cxy.redis.module.quartzjob.service.QuartzLogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 /**

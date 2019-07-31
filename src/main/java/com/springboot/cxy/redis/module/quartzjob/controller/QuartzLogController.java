@@ -1,17 +1,16 @@
 package com.springboot.cxy.redis.module.quartzjob.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.github.pagehelper.Page;
 import com.springboot.cxy.redis.module.quartzjob.entity.QuartzInfoModel;
 import com.springboot.cxy.redis.module.quartzjob.entity.QuartzLogModel;
 import com.springboot.cxy.redis.module.quartzjob.service.QuartzInfoService;
 import com.springboot.cxy.redis.module.quartzjob.service.QuartzLogService;
 import org.springframework.context.annotation.Scope;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import tool.util.JsonUtil;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;

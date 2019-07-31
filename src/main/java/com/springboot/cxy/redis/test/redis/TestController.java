@@ -30,7 +30,7 @@ public class TestController {
 //        System.out.println(age);
 //       List<MsgQueueEntity> list = new ArrayList<>();
         Map<String, Object> map = new HashMap<>();
-        for (int i = 5; i < 10; i++) {
+        for (int i = 10; i < 15; i++) {
             MsgQueueEntity msgQueueEntity = new MsgQueueEntity();
             msgQueueEntity.setLoginName("测试"+i+"号");
             msgQueueEntity.setLoginPwd("密码"+i+"号");

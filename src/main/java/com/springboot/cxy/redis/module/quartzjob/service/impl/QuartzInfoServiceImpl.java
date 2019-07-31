@@ -36,17 +36,25 @@ public class QuartzInfoServiceImpl implements QuartzInfoService {
 
 	@Override
 	public boolean save(QuartzInfoEntity qi) {
+		int result = quartzInfoMapper.save(qi);
+		if (result > 0) {
+			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public boolean update(Map<String, Object> search) {
+		int result = quartzInfoMapper.updateSelective(search);
+		if (result > 0) {
+			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public List<QuartzInfoEntity> list(Map<String, Object> result) {
-		return null;
+		return quartzInfoMapper.listSelective(result);
 	}
 
 	@Override
@@ -97,5 +105,10 @@ public class QuartzInfoServiceImpl implements QuartzInfoService {
 	@Override
 	public List<QuartzInfoModel> quartzInfoList(Map<String, Object> searchMap) {
 		return  quartzInfoMapper.page(searchMap);
+	}
+
+	@Override
+	public QuartzInfoEntity getById(Long id) {
+		return quartzInfoMapper.findByPrimary(id);
 	}
 }
