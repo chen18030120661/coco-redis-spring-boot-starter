@@ -2,6 +2,7 @@ package com.springboot.cxy.redis.test.redis;
 
 import com.springboot.cxy.redis.module.msgqueue.MsgPublisher;
 import com.springboot.cxy.redis.module.msgqueue.entity.MsgQueueEntity;
+import com.springboot.cxy.redis.module.quartz.annotation.AddSysLog;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ public class TestController {
 
     @Resource
     private MsgPublisher msgPublisher;
-
+    @AddSysLog(desc = "test测试")
     @RequestMapping("/api/redis/test")
     public void test() {
 //        String test1 = testService.test("测试1号", 10);

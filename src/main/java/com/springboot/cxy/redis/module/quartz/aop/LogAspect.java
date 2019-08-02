@@ -37,7 +37,7 @@ public class LogAspect {
 	  * @param jp
 	  * @param rl
 	  */
-    @AfterReturning("within(com.springboot.cxy.*.controller..*) && @annotation(rl)")
+    @AfterReturning("within(com.springboot.cxy.redis..*) && @annotation(rl)")
     public void addLogSuccess(JoinPoint jp, AddSysLog rl){
     	try {
 			ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();

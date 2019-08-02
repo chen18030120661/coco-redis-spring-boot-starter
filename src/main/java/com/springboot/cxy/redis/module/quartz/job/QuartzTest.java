@@ -1,5 +1,6 @@
 package com.springboot.cxy.redis.module.quartz.job;
 
+import com.springboot.cxy.redis.module.quartz.annotation.AddSysLog;
 import com.springboot.cxy.redis.module.quartz.entity.QuartzInfoEntity;
 import com.springboot.cxy.redis.module.quartz.entity.QuartzLogEntity;
 import com.springboot.cxy.redis.module.quartz.service.QuartzInfoService;
@@ -11,12 +12,11 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
-import tool.util.BeanUtil;
 import tool.util.DateUtil;
 
-import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,6 +37,7 @@ public class QuartzTest implements Job {
     /**
      * 定时任务
      */
+    @AddSysLog(desc = "定时任务测试")
     public String quartzTest() {
         return "定时任务测试";
     }

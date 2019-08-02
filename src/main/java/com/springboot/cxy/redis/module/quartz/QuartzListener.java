@@ -19,6 +19,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *
+ * @author : xy.chen
+ * @time : 2019/7/31
+ * @desc : 定时任务初始化调度器
+ */
 //public class QuartzListener implements ServletContextListener{
 @Component
 public class QuartzListener implements CommandLineRunner {

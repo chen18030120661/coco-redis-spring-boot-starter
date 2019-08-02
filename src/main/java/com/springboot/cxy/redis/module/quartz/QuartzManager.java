@@ -16,11 +16,10 @@ import org.slf4j.LoggerFactory;
 
 
 /**
- * 类名：QuartzManager <br/>
- * 功能：<br/>
- * 详细：Quartz增、删、改工具类 <br/>
- * 作者： Tliu <br/>
- * 日期：2015-7-17 <br/>
+ *
+ * @author : xy.chen
+ * @time : 2019/7/31
+ * @desc : Quartz增、删、改工具类
  */
 public class QuartzManager {
  
