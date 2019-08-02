@@ -33,7 +33,7 @@ public class QuartzLogServiceImpl implements QuartzLogService {
 
 	@Override
 	public int save(QuartzLogEntity ql) {
-		return 0;
+		return quartzLogMapper.save(ql);
 	}
 
 	@Override

@@ -5,6 +5,7 @@ import com.springboot.cxy.redis.module.quartz.entity.QuartzLogEntity;
 import com.springboot.cxy.redis.module.quartz.service.QuartzInfoService;
 import com.springboot.cxy.redis.module.quartz.service.QuartzLogService;
 import com.springboot.cxy.redis.module.quartz.util.RedisLock;
+import com.springboot.cxy.redis.module.quartz.util.SpringUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 import tool.util.BeanUtil;
 import tool.util.DateUtil;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +24,15 @@ import java.util.Map;
 @Component
 @Lazy(value = false)
 public class QuartzTest implements Job {
+
+//    @Resource
+//    private QuartzInfoService  quartzInfoService;
+//
+//    @Resource
+//    private QuartzLogService quartzLogService;
+//
+//    @Resource
+//    private RedisTemplate redisTemplate;
 
     /**
      * 定时任务
@@ -31,10 +42,12 @@ public class QuartzTest implements Job {
     }
     @Override
     public void execute(JobExecutionContext job) throws JobExecutionException {
-        QuartzInfoService quartzInfoService = (QuartzInfoService) BeanUtil.getBean("quartzInfoService");
-        QuartzLogService quartzLogService = (QuartzLogService) BeanUtil.getBean("quartzLogService");
-
-        RedisTemplate redisTemplate = (RedisTemplate) BeanUtil.getBean("redisTemplate");
+//        QuartzInfoService quartzInfoService = (QuartzInfoService) BeanUtil.getBean("quartzInfoService");
+//        QuartzLogService quartzLogService = (QuartzLogService) BeanUtil.getBean("quartzLogService");
+//        RedisTemplate redisTemplate = (RedisTemplate) BeanUtil.getBean("redisTemplate");
+        QuartzInfoService quartzInfoService = (QuartzInfoService) SpringUtil.getBean("quartzInfoService");
+        QuartzLogService quartzLogService = (QuartzLogService) SpringUtil.getBean("quartzLogService");
+        RedisTemplate redisTemplate = (RedisTemplate) SpringUtil.getBean("redisTemplate");
         RedisLock redisLock = new RedisLock(redisTemplate,"quartzTest_lock_");
         try{
             if(redisLock.lock()) {

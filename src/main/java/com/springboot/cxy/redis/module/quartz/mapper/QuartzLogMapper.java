@@ -1,5 +1,6 @@
 package com.springboot.cxy.redis.module.quartz.mapper;
 
+import com.springboot.cxy.redis.module.quartz.entity.QuartzLogEntity;
 import com.springboot.cxy.redis.module.quartz.entity.QuartzLogModel;
 import org.apache.ibatis.annotations.Param;
 
@@ -28,6 +29,10 @@ public interface QuartzLogMapper {
 	 */
 	List<QuartzLogModel> page(Map<String, Object> searchMap);
 
-    
-
+	/**
+	 * 保存定时日志
+	 * @param quartzLogEntity
+	 * @return
+	 */
+	int save(QuartzLogEntity quartzLogEntity);
 }
