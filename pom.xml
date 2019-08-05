@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cxy.springboot</groupId>
-    <artifactId>coco-redis-spring-boot-starter</artifactId>
+    <artifactId>coco-spring-boot-starter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>coco-redis-spring-boot-starter</name>
+    <name>coco-spring-boot-starter</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

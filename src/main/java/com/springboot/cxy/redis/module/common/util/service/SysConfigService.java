@@ -1,7 +1,7 @@
-package com.springboot.cxy.redis.module.common.util.global.service;
+package com.springboot.cxy.redis.module.common.util.service;
 
 
-import com.springboot.cxy.redis.module.common.util.global.entity.SysConfig;
+import com.springboot.cxy.redis.module.common.util.entity.SysConfig;
 
 import java.util.List;
 

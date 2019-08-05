@@ -1,9 +1,9 @@
-package com.springboot.cxy.redis.module.common.util.global.service.impl;
+package com.springboot.cxy.redis.module.common.util.service.impl;
 
 
-import com.springboot.cxy.redis.module.common.util.global.entity.SysConfig;
-import com.springboot.cxy.redis.module.common.util.global.mapper.SysConfigMapper;
-import com.springboot.cxy.redis.module.common.util.global.service.SysConfigService;
+import com.springboot.cxy.redis.module.common.util.entity.SysConfig;
+import com.springboot.cxy.redis.module.common.util.mapper.SysConfigMapper;
+import com.springboot.cxy.redis.module.common.util.service.SysConfigService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

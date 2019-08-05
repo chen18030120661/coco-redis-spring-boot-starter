@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.module.common.util.global.entity;
+package com.springboot.cxy.redis.module.common.util.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

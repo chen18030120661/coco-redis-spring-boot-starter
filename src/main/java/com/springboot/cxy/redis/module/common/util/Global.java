@@ -1,4 +1,4 @@
-package com.springboot.cxy.redis.module.common.util.global;
+package com.springboot.cxy.redis.module.common.util;
 
 import tool.util.NumberUtil;
 import tool.util.StringUtil;
