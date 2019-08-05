@@ -1,1 +1,1 @@
-# coco-redis-spring-boot-starter
+# coco-spring-boot-starter
