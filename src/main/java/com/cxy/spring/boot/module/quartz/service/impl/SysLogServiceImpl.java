@@ -2,13 +2,9 @@ package com.cxy.spring.boot.module.quartz.service.impl;
 
 import com.cxy.spring.boot.module.quartz.entity.SysLogEntity;
 import com.cxy.spring.boot.module.quartz.mapper.SysLogMapper;
+import com.cxy.spring.boot.module.quartz.service.SysLogService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.springboot.cxy.module.quartz.entity.SysLogEntity;
-import com.springboot.cxy.module.quartz.mapper.SysLogMapper;
-import com.springboot.cxy.redis.module.quartz.entity.SysLogEntity;
-import com.springboot.cxy.redis.module.quartz.mapper.SysLogMapper;
-import com.springboot.cxy.redis.module.quartz.service.SysLogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

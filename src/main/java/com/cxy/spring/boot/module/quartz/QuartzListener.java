@@ -1,20 +1,13 @@
 package com.cxy.spring.boot.module.quartz;
 
-
-import com.springboot.cxy.redis.module.quartz.entity.QuartzInfoEntity;
-import com.springboot.cxy.redis.module.quartz.entity.QuartzInfoModel;
-import com.springboot.cxy.redis.module.quartz.service.QuartzInfoService;
+import com.cxy.spring.boot.module.quartz.entity.QuartzInfoEntity;
+import com.cxy.spring.boot.module.quartz.entity.QuartzInfoModel;
+import com.cxy.spring.boot.module.quartz.service.QuartzInfoService;
 import org.apache.log4j.Logger;
 import org.quartz.Job;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
-import tool.util.BeanUtil;
-
-import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +25,7 @@ public class QuartzListener implements CommandLineRunner {
 	private static Logger logger=Logger.getLogger(QuartzListener.class);
 
 	@Resource
-	private QuartzInfoService  quartzInfoService;
+	private QuartzInfoService quartzInfoService;
 	
 
 //	@Override

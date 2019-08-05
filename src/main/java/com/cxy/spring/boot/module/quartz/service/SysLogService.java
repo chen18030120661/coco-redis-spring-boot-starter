@@ -2,9 +2,6 @@ package com.cxy.spring.boot.module.quartz.service;
 
 import com.cxy.spring.boot.module.quartz.entity.SysLogEntity;
 import com.github.pagehelper.Page;
-import com.springboot.cxy.module.quartz.entity.SysLogEntity;
-import com.springboot.cxy.redis.module.quartz.entity.SysLogEntity;
-
 import java.util.Map;
 
 /**

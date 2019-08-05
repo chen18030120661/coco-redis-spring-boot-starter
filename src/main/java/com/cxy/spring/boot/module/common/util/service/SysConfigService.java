@@ -2,9 +2,6 @@ package com.cxy.spring.boot.module.common.util.service;
 
 
 import com.cxy.spring.boot.module.common.util.entity.SysConfig;
-import com.springboot.cxy.module.common.util.entity.SysConfig;
-import com.springboot.cxy.redis.module.common.util.entity.SysConfig;
-
 import java.util.List;
 
 /**

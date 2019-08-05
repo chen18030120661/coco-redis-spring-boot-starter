@@ -1,7 +1,6 @@
 package com.cxy.spring.boot.module.quartz.mapper;
 
-import com.springboot.cxy.redis.module.quartz.entity.SysLogEntity;
-
+import com.cxy.spring.boot.module.quartz.entity.SysLogEntity;
 import java.util.List;
 import java.util.Map;
 

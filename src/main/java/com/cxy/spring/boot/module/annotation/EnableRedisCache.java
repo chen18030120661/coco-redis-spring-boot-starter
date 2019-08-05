@@ -1,10 +1,8 @@
 package com.cxy.spring.boot.module.annotation;
 
 import com.cxy.spring.boot.module.annotation.aop.RedisAspect;
-import com.springboot.cxy.module.annotation.aop.RedisAspect;
-import com.springboot.cxy.redis.module.annotation.aop.RedisAspect;
-import com.springboot.cxy.redis.module.annotation.entity.RedisCacheEntity;
-import com.springboot.cxy.redis.module.annotation.util.RedisClient;
+import com.cxy.spring.boot.module.annotation.entity.RedisCacheEntity;
+import com.cxy.spring.boot.module.annotation.util.RedisClient;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
