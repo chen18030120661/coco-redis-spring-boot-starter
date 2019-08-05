@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import tool.util.DateUtil;
 
 import java.util.HashMap;
@@ -37,7 +38,7 @@ public class QuartzTest implements Job {
     /**
      * 定时任务
      */
-    @AddSysLog(desc = "定时任务测试")
+//    @AddSysLog(desc = "定时任务测试")  这个类有实现job，@AfterReturning无法读取到对应的注解
     public String quartzTest() {
         return "定时任务测试";
     }
