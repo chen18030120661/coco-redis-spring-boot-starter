@@ -1,4 +1,4 @@
-package com.cxy.spring.boot.module.common.util.entity;
+package com.cxy.spring.boot.module.common.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

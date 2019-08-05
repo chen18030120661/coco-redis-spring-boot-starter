@@ -1,6 +1,6 @@
-package com.cxy.spring.boot.module.common.util.mapper;
+package com.cxy.spring.boot.module.common.mapper;
 
-import com.cxy.spring.boot.module.common.util.entity.SysConfig;
+import com.cxy.spring.boot.module.common.entity.SysConfig;
 
 import java.util.List;
 
