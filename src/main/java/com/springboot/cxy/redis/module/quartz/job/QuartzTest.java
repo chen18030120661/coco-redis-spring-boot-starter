@@ -79,7 +79,7 @@ public class QuartzTest implements Job {
                 }
             }
         } catch (Exception e) {
-            log.info("渠道日报统计，redis锁发生异常");
+            log.info("quartzTest定时任务,redis锁发生异常:【{}】",e.getMessage());
         } finally {
             redisLock.unlock();
         }
