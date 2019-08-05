@@ -1,8 +1,7 @@
 package com.cxy.spring.boot.test.base;
 
-import com.cgcg.base.core.exception.CommonException;
-import com.cgcg.base.format.Result;
-import com.cgcg.base.format.encrypt.Encrypt;
+import com.cxy.spring.boot.module.base.format.Result;
+import com.cxy.spring.boot.module.base.format.encrypt.Encrypt;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +13,9 @@ import java.util.Map;
 
 /**
  * .
- *
- * @author zhng.lin
- * @date 2019/6/24
+ * @author xy.chen
+ * @version 1.0.0
+ * @date 2019-08-05
  */
 @Api(tags = "测试接口文档")
 @RestController
@@ -51,7 +50,7 @@ public class TestController {
     @PostMapping
     public List gets(@RequestBody Map<String, String> param) {
         if (Integer.valueOf(param.get("id")) == 1) {
-            throw new CommonException(123, "zsd");
+            throw new com.cxy.spring.boot.module.interceptor.core.exception.CommonException(123, "zsd");
         }
         final HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("yes", "OK");
