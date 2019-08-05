@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- arc_sys_log表:催收系统案件记录模块 -->
-<mapper namespace="com.springboot.cxy.redis.module.quartz.mapper.SysLogMapper">
+<mapper namespace="com.cxy.spring.boot.module.quartz.mapper.SysLogMapper">
     <!--返回Map-->        
-    <resultMap id="BaseResultMap" type="com.springboot.cxy.redis.module.quartz.entity.SysLogEntity">
+    <resultMap id="BaseResultMap" type="com.cxy.spring.boot.module.quartz.entity.SysLogEntity">
         <id column="id" property="id" jdbcType="BIGINT" />
         <result column="method" property="method" jdbcType="VARCHAR" />
         <result column="remote_addr" property="remoteAddr" jdbcType="VARCHAR" />
@@ -46,12 +46,12 @@
     </sql>
     
     
-    <insert id="save" parameterType="com.springboot.cxy.redis.module.quartz.entity.SysLogEntity" keyProperty="id" useGeneratedKeys="true">
+    <insert id="save" parameterType="com.cxy.spring.boot.module.quartz.entity.SysLogEntity" keyProperty="id" useGeneratedKeys="true">
         insert into arc_sys_log(method,remote_addr,request_uri,add_user,create_time,content)values(#{method,jdbcType=VARCHAR},#{remoteAddr,jdbcType=VARCHAR},#{requestUri,jdbcType=VARCHAR},#{addUser,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP},#{content,jdbcType=VARCHAR})
     </insert>
 
     
-    <update id="update" parameterType="com.springboot.cxy.redis.module.quartz.entity.SysLogEntity">
+    <update id="update" parameterType="com.cxy.spring.boot.module.quartz.entity.SysLogEntity">
         update arc_sys_log set 
             method = #{method,jdbcType=VARCHAR},
             remote_addr = #{remoteAddr,jdbcType=VARCHAR},

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.springboot.cxy.redis.module.shardtable.mapper.UserContactsMapper">
+<mapper namespace="com.cxy.spring.boot.module.shardtable.mapper.UserContactsMapper">
 
     <!--返回Map-->
-    <resultMap id="BaseResultMap" type="com.springboot.cxy.redis.module.shardtable.entity.UserContactsEntity">
+    <resultMap id="BaseResultMap" type="com.cxy.spring.boot.module.shardtable.entity.UserContactsEntity">
         <id column="id" property="id" jdbcType="BIGINT" />
         <result column="user_id" property="userId" jdbcType="BIGINT" />
         <result column="name" property="name" jdbcType="VARCHAR" />
