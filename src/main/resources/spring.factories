@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    com.cgcg.base.interceptor.WebMvcRequestConfigurerAdapter,\
-    com.cgcg.base.core.exception.ExceptionHandlerAdvice
