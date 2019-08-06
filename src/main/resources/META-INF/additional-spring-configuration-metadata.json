@@ -1,7 +1,7 @@
 {
   "properties": [
     {
-      "name": "cgcg.format.response-data",
+      "name": "coco.format.response-data",
       "type": "java.lang.Boolean",
       "description": "is open auth",
       "defaultValue": "false"

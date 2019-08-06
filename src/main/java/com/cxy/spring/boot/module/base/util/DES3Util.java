@@ -2,7 +2,7 @@ package com.cxy.spring.boot.module.base.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.cxy.spring.boot.module.base.core.context.SpringContextHolder;
+import com.cxy.spring.boot.module.base.core.context.SpringContextCoreHolder;
 import com.cxy.spring.boot.module.base.core.enums.CharsetCode;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -219,9 +219,9 @@ public final class DES3Util {
      * @date 2019/6/27
      */
     public static String getSystemEncrypt(String envKey) {
-        final String property = SpringContextHolder.getProperty(envKey);
+        final String property = SpringContextCoreHolder.getProperty(envKey);
         if (StringUtils.isBlank(property)) {
-            final String des3Key = SpringContextHolder.getProperty("cgcg.format.des3");
+            final String des3Key = SpringContextCoreHolder.getProperty("cgcg.format.des3");
             if (StringUtils.isNotBlank(des3Key)) {
                 return des3Key;
             }

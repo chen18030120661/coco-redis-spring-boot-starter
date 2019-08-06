@@ -20,7 +20,7 @@ import java.util.Map;
 @Api(tags = "测试接口文档")
 @RestController
 @RequestMapping("test")
-public class TestController {
+public class BaseTestController {
 
     @ApiOperation("接口")
     @GetMapping("index")

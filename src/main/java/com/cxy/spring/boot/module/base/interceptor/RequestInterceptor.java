@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
  * 请求日志拦截器
  * The type Page interceptor.
  *
- * @author zc.lin
+ * @author xy.chen
+ * @version 1.0.0
+ * @date 2019-08-05
  */
 @Slf4j
 public class RequestInterceptor extends HandlerInterceptorAdapter {

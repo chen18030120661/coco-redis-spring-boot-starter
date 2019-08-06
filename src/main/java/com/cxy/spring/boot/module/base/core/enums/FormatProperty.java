@@ -1,7 +1,7 @@
 package com.cxy.spring.boot.module.base.core.enums;
 
-import com.cxy.spring.boot.module.base.core.context.SpringContextHolder;
-import com.cxy.spring.boot.module.interceptor.format.Result;
+import com.cxy.spring.boot.module.base.core.context.SpringContextCoreHolder;
+import com.cxy.spring.boot.module.base.format.Result;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -38,7 +38,7 @@ public enum FormatProperty {
     public static void init() {
         final FormatProperty[] values = FormatProperty.values();
         for (FormatProperty value : values) {
-            value.property = SpringContextHolder.getProperty(value.key);
+            value.property = SpringContextCoreHolder.getProperty(value.key);
         }
     }
 

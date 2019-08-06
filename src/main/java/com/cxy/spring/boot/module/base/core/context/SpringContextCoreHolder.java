@@ -13,7 +13,7 @@ import org.springframework.util.Assert;
  */
 @Slf4j
 @Component
-public class SpringContextHolder implements ApplicationContextAware {
+public class SpringContextCoreHolder implements ApplicationContextAware {
     private static ApplicationContext applicationContext;
 
     private static Environment environment;
@@ -24,7 +24,7 @@ public class SpringContextHolder implements ApplicationContextAware {
     public void setApplicationContext(ApplicationContext applicationContext) {
         log.info("Initializing SpringContextHolder");
         Assert.notNull(applicationContext, "SpringContextHolder Load Error");
-        SpringContextHolder.applicationContext = applicationContext; // NOSONAR
+        SpringContextCoreHolder.applicationContext = applicationContext; // NOSONAR
         environment = getBean(Environment.class);  // NOSONAR
         FormatProperty.init();
     }

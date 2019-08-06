@@ -10,7 +10,7 @@ import java.util.List;
 @Setter
 @Getter
 @Component
-@ConfigurationProperties("cgcg.interceptor.ignore")
+@ConfigurationProperties("coco.interceptor.ignore")
 public class IgnoreHandle {
     private List<String> root;
     private List<String> authIgnore;

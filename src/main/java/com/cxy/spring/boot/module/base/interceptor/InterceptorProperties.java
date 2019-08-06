@@ -8,13 +8,14 @@ import org.springframework.stereotype.Component;
 /**
  * 拦截器配置.
  *
- * @author zhicong.lin
- * @date 2019/6/25
+ * @author xy.chen
+ * @version 1.0.0
+ * @date 2019-08-05
  */
 @Setter
 @Getter
 @Component
-@ConfigurationProperties("cgcg.interceptor")
+@ConfigurationProperties("coco.interceptor")
 public class InterceptorProperties {
 
     private boolean auth;

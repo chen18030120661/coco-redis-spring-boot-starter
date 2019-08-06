@@ -34,3 +34,18 @@ mybatis:
     map-underscore-to-camel-case: true
   mapper-locations: classpath:/mappers/**/*.xml
 
+coco:
+  interceptor:
+    auth: true
+    ignore:
+      auth-ignore:
+        - /test/index
+      log-ignore:
+  swagger:
+    name: wocalie
+    apis: com.test.base.controller
+    desc: sda
+    version: 1.0.0
+  format:
+    response-data: true
+    des3: 123456

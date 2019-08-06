@@ -1,7 +1,7 @@
 package com.cxy.spring.boot.module.base.interceptor;
 
 import com.alibaba.fastjson.JSON;
-import com.cxy.spring.boot.module.base.core.context.SpringContextHolder;
+import com.cxy.spring.boot.module.base.core.context.SpringContextCoreHolder;
 import com.cxy.spring.boot.module.base.core.enums.CharsetCode;
 import com.cxy.spring.boot.module.base.interceptor.auth.AuthService;
 import lombok.extern.slf4j.Slf4j;
@@ -24,9 +24,9 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        final Boolean property = SpringContextHolder.getProperty("cgcg.interceptor.auth", Boolean.class);
+        final Boolean property = SpringContextCoreHolder.getProperty("cgcg.interceptor.auth", Boolean.class);
         if (property != null && property) {
-            final AuthService authService = SpringContextHolder.getBean(AuthService.class);
+            final AuthService authService = SpringContextCoreHolder.getBean(AuthService.class);
             if (authService != null) {
                 if (authService.preHandle(request, response, handler)) {
                     return true;

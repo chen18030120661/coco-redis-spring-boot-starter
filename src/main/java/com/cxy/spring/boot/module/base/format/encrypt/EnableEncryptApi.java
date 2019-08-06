@@ -13,6 +13,6 @@ import java.lang.annotation.*;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import({com.cxy.spring.boot.module.interceptor.format.encrypt.RequestBodyEncryptHandler.class, com.cxy.spring.boot.module.interceptor.format.encrypt.ResponseBodyEncryptHandler.class})
+@Import({RequestBodyEncryptHandler.class, ResponseBodyEncryptHandler.class})
 public @interface EnableEncryptApi {
 }
