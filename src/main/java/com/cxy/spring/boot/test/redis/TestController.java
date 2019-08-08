@@ -3,10 +3,13 @@ package com.cxy.spring.boot.test.redis;
 import com.cxy.spring.boot.module.msgqueue.MsgPublisher;
 import com.cxy.spring.boot.module.msgqueue.entity.MsgQueueEntity;
 import com.cxy.spring.boot.module.quartz.annotation.AddSysLog;
+import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,5 +47,22 @@ public class TestController {
 
 
 //        System.out.println(num);
+    }
+
+    @RequestMapping("/api/redis/fetchParam")
+    public String fetchParam(HttpServletRequest request) {
+        Enumeration parameterNames = request.getParameterNames();
+        if (!parameterNames.hasMoreElements()) {
+            return "";
+        } else {
+            StringBuilder sb = new StringBuilder();
+
+            while (parameterNames.hasMoreElements()) {
+                String param = (String) parameterNames.nextElement();
+                String[] values = request.getParameterValues(param);
+                sb.append("[").append(param).append(":").append(ArrayUtils.toString(values)).append("]");
+            }
+            return sb.toString();
+        }
     }
 }

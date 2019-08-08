@@ -1,5 +1,6 @@
 package com.cxy.spring.boot.module.base.core.exception;
 
+import com.cxy.spring.boot.module.interceptor.core.exception.CommonException;
 /**
  * 加密参数错误.
  *
@@ -7,7 +8,7 @@ package com.cxy.spring.boot.module.base.core.exception;
  * @version 1.0.0
  * @date 2019-08-05
  */
-public class EncryptionParamWrongException extends com.cxy.spring.boot.module.interceptor.core.exception.CommonException {
+public class EncryptionParamWrongException extends CommonException {
     /**
      * Constructs a new runtime exception with {@code null} as its
      * detail message.  The cause is not initialized, and may subsequently be

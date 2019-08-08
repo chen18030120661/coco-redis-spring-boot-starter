@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.NoHandlerFoundException;
-
+import com.cxy.spring.boot.module.interceptor.core.exception.CommonException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,9 +49,9 @@ public class ExceptionHandlerAdvice {
      * @param e the e
      * @return the result
      */
-    @ExceptionHandler(com.cxy.spring.boot.module.interceptor.core.exception.CommonException.class)
+    @ExceptionHandler(CommonException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public Result handleException(com.cxy.spring.boot.module.interceptor.core.exception.CommonException e) {
+    public Result handleException(CommonException e) {
         if (e.getErrorClass() != null) {
             final Logger logger = LoggerFactory.getLogger(e.getErrorClass());
             logger.error(e.getMessage(), e);
