@@ -17,16 +17,16 @@ import org.apache.commons.lang3.StringUtils;
 @Getter
 public enum FormatProperty {
     //数据格式化配置
-    DATA("cgcg.format.response-data"),
+    DATA("coco.format.response-data"),
     //数据格式化类配置
-    CLASS_NAME("cgcg.format.class-name"),
-    PROPERTY("cgcg.format.property"),
+    CLASS_NAME("coco.format.class-name"),
+    PROPERTY("coco.format.property"),
     //数据加密密钥配置
-    DES_ROOT("cgcg.format.des3"),
+    DES_ROOT("coco.format.des3"),
     //数据加密参数密钥配置
-    DES_PARAM("cgcg.format.des3.param"),
+    DES_PARAM("coco.format.des3.param"),
     //数据加密返回结果密钥配置
-    DES_RESULT("cgcg.format.des3.result");
+    DES_RESULT("coco.format.des3.result");
 
     private String key;
     private Object property;

@@ -24,7 +24,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        final Boolean property = SpringContextCoreHolder.getProperty("cgcg.interceptor.auth", Boolean.class);
+        final Boolean property = SpringContextCoreHolder.getProperty("coco.interceptor.auth", Boolean.class);
         if (property != null && property) {
             final AuthService authService = SpringContextCoreHolder.getBean(AuthService.class);
             if (authService != null) {
