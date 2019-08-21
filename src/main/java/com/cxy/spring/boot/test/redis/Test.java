@@ -41,7 +41,7 @@ public class Test {
 //        System.out.println(timeRegex);
 //        boolean matches = "125a22".matches(timeRegex);
 //        System.out.println(matches);
-    testAa("dasda","d2da","d2dsdaa");
+//    testAa("dasda","d2da","d2dsdaa");
     }
     public static void testAa(String... params){
         for (String param : params) {
