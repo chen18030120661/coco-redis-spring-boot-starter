@@ -26,6 +26,8 @@ spring:
     password: jnns
     database: 0
     timeout: 30000
+#  profiles:
+#    active: dev
 logging:
   level:
     com.springboot.cxy.redis: debug
