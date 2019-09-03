@@ -1,4 +1,4 @@
-package com.cxy.spring.boot.module.msgqueue.entity;
+package com.cxy.spring.boot.module.msgqueue;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

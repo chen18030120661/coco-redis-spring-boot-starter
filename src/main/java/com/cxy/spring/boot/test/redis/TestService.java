@@ -1,7 +1,7 @@
 package com.cxy.spring.boot.test.redis;
 
 import com.cxy.spring.boot.module.annotation.RedisCache;
-import com.cxy.spring.boot.module.msgqueue.entity.MsgQueueEntity;
+import com.cxy.spring.boot.module.msgqueue.MsgQueueEntity;
 import com.cxy.spring.boot.test.redis.mapper.TestMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

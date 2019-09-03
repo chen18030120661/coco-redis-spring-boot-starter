@@ -1,7 +1,7 @@
-package com.cxy.spring.boot.module.msgqueue;
+package com.cxy.spring.boot.module.msgqueue.redis;
 
 import com.alibaba.fastjson.JSON;
-import com.cxy.spring.boot.module.msgqueue.entity.MsgQueueEntity;
+import com.cxy.spring.boot.module.msgqueue.MsgQueueEntity;
 import com.cxy.spring.boot.test.redis.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;

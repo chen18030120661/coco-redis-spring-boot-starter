@@ -1,6 +1,6 @@
-package com.cxy.spring.boot.module.msgqueue;
+package com.cxy.spring.boot.module.msgqueue.redis;
 
-import com.cxy.spring.boot.module.msgqueue.entity.MsgQueueEntity;
+import com.cxy.spring.boot.module.msgqueue.MsgQueueEntity;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 

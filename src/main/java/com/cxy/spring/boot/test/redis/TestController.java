@@ -1,9 +1,13 @@
 package com.cxy.spring.boot.test.redis;
 
-import com.cxy.spring.boot.module.msgqueue.MsgPublisher;
-import com.cxy.spring.boot.module.msgqueue.entity.MsgQueueEntity;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.cxy.spring.boot.module.msgqueue.rabbit.MsgProcessor;
+import com.cxy.spring.boot.module.msgqueue.redis.MsgPublisher;
+import com.cxy.spring.boot.module.msgqueue.MsgQueueEntity;
 import com.cxy.spring.boot.module.quartz.annotation.AddSysLog;
 import org.apache.commons.lang3.ArrayUtils;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,6 +25,10 @@ public class TestController {
 
     @Resource
     private MsgPublisher msgPublisher;
+
+    @Resource
+    private RabbitTemplate rabbitTemplate;
+
     @AddSysLog(desc = "test测试")
     @RequestMapping("/api/redis/test")
     public void test() {
@@ -34,19 +42,26 @@ public class TestController {
 //        String age = testService.testUser(user);
 //        System.out.println(age);
 //       List<MsgQueueEntity> list = new ArrayList<>();
-        Map<String, Object> map = new HashMap<>();
-        for (int i = 10; i < 15; i++) {
-            MsgQueueEntity msgQueueEntity = new MsgQueueEntity();
-            msgQueueEntity.setLoginName("测试"+i+"号");
-            msgQueueEntity.setLoginPwd("密码"+i+"号");
-            map.put("aaa", msgQueueEntity);
-            msgPublisher.push(msgQueueEntity);
-//            list.add(msgQueueEntity);
-        }
+//        Map<String, Object> map = new HashMap<>();
+//        for (int i = 10; i < 15; i++) {
+//            MsgQueueEntity msgQueueEntity = new MsgQueueEntity();
+//            msgQueueEntity.setLoginName("测试"+i+"号");
+//            msgQueueEntity.setLoginPwd("密码"+i+"号");
+//            map.put("aaa", msgQueueEntity);
+//            msgPublisher.push(msgQueueEntity);
+////            list.add(msgQueueEntity);
+//        }
 //        int num = testService.insertTestBath(list);
 
 
 //        System.out.println(num);
+        JSONArray jsonArray = new JSONArray();
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("loginName", "测试1号");
+        jsonObject.put("loginPwd", "测试密码");
+        jsonArray.add(jsonObject);
+        rabbitTemplate.convertAndSend(MsgProcessor.EXCHANGE, MsgProcessor.RUTE_KEY, jsonArray.toJSONString());
+
     }
 
     @RequestMapping("/api/redis/fetchParam")

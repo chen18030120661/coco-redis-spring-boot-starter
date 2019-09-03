@@ -26,6 +26,11 @@ spring:
     password: jnns
     database: 0
     timeout: 30000
+  rabbitmq:
+    addresses: 112.74.179.254
+    port: 5672
+    username: admin
+    password: nx8260529
 #  profiles:
 #    active: dev
 logging:
