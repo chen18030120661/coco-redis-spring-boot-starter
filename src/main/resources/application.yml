@@ -27,12 +27,19 @@ spring:
     database: 0
     timeout: 30000
   rabbitmq:
-    addresses: 112.74.179.254
-    port: 5672
-    username: admin
-    password: nx8260529
+#    addresses: 112.74.179.254
+#    port: 5672
+#    username: admin
+#    password: nx8260529
+    addresses: 127.0.0.1
+    port: 15672
+    username: guest
+    password: guest
 #  profiles:
 #    active: dev
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/poker
 logging:
   level:
     com.springboot.cxy.redis: debug
