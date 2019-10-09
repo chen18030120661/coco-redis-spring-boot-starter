@@ -215,8 +215,6 @@ public final class DES3Util {
 
     /**
      * 获取配置系统DES3加密密钥
-     * @auth zhicong.lin
-     * @date 2019/6/27
      */
     public static String getSystemEncrypt(String envKey) {
         final String property = SpringContextCoreHolder.getProperty(envKey);
@@ -237,7 +235,7 @@ public final class DES3Util {
         hashMap.put("id", "11");
         final String s1 = DES3Util.encryptMode(JSON.toJSONString(hashMap));
         System.out.println("s1 = " + s1);
-        final String s = DES3Util.decryptMode("7tzYCJtFFzfJxEd6AIqEr68xVPGgR+4zDQloN5GkEHTwyGURCdheRChXSh+nce5yyYIUJsHdtr6G7WW93M4cjA==");
+        final String s = DES3Util.decryptMode("e82Ej/OWLnc8LX+CntVPO1y3C/DA+B2H");
         System.out.println("s = " + s);
     }
 
