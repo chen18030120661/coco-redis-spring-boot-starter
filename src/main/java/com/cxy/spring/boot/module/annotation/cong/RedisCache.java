@@ -1,4 +1,4 @@
-package com.cxy.spring.boot.module.annotation;
+package com.cxy.spring.boot.module.annotation.cong;
 
 import java.lang.annotation.*;
 import java.util.concurrent.TimeUnit;

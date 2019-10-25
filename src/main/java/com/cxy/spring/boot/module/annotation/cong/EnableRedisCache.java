@@ -1,4 +1,4 @@
-package com.cxy.spring.boot.module.annotation;
+package com.cxy.spring.boot.module.annotation.cong;
 
 import com.cxy.spring.boot.module.annotation.aop.RedisAspect;
 import com.cxy.spring.boot.module.annotation.entity.RedisCacheEntity;
