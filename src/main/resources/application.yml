@@ -35,6 +35,7 @@ spring:
     port: 15672
     username: guest
     password: guest
+#    publisher-confirms: true
 #  profiles:
 #    active: dev
   data:
