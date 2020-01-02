@@ -13,7 +13,12 @@
 //@Configuration
 //public class OrdinaryConfig {
 //    @Bean
-//    public Queue ordinaryQueue() {
+//    public Queue ordinaryQueue1() {
 //        return new Queue("ordinaryQueue");
 //    }
+////
+////    @Bean
+////    public Queue ordinaryQueue2() {
+////        return new Queue("ordinaryQueue");
+////    }
 //}
