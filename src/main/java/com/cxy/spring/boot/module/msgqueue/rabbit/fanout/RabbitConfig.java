@@ -6,8 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @Author 冯战魁
- * @Date 2018/1/12 下午2:50
+ * 广播队列
+ *
+ * @Author xy.chen
+ * @Date 2020/1/2
  */
 @Configuration
 public class RabbitConfig {
