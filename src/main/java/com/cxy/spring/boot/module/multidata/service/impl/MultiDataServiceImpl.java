@@ -31,19 +31,6 @@ public class MultiDataServiceImpl implements MultiDataService {
 	@Resource
 	private DataSource secodDataSource;
 
-    @Resource
-    private SysConfigMapper sysConfigMapper;
-
-	/**
-	 *     private Long id;
-	 private String company;
-	 private String version;
-	 private String QQ;
-	 private String myEmail;
-	 * @return
-	 */
-
-
 	@Override
 	public List<AboutUsEntity> findAboutUsInfo() {
 		String nativeSql = "select company as company,business as business,version as version,QQ as QQ,my_email as myEmail from about_us";
