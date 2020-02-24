@@ -3,23 +3,26 @@ spring:
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
     username: root
     password: root
-    initialSize: 10
-    maxIdle: 20
-    minIdle: 5
-    maxActive: 200
-    maxWait: 10000
-
-    removeAbandoned: true
-    removeAbandonedTimeout: 180
-
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-
-    validationQuery: select 1
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
     driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+          connectionTimeout: 600000
+          maximumPoolSize: 1500
+          maxLifetime: 60000
+          minimumIdle: 20
+          validationTimeout: 3000
+          idleTimeout: 60000
+  seconddatasource:
+    url: jdbc:mysql://112.74.179.254:3306/ballvideo_dev?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    username: ballvideo_java
+    password: e7I8vpV7H6FZohOj
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      connectionTimeout: 600000
+      maximumPoolSize: 1500
+      maxLifetime: 60000
+      minimumIdle: 20
+      validationTimeout: 3000
+      idleTimeout: 60000
   redis:
     host: 127.0.0.1
     port: 6379
