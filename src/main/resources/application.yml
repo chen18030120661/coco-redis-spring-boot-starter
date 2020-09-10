@@ -29,6 +29,13 @@ spring:
     password: jnns
     database: 0
     timeout: 30000
+    bloom:
+      host: 127.0.0.1
+      port: 6379
+      password: jnns
+      init-capacity: 10000000
+      error-rate: 0.0003
+      database: 3
   rabbitmq:
 #    addresses: 112.74.179.254
 #    port: 5672
